@@ -22,7 +22,7 @@ def profile_view(request, username=None):
 def profile_edit_view(request):
     form = ProfileForm(instance=request.user.profile)  
     
-    if request.method == 'POST':
+    if request.method == 'POST':   
         form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if form.is_valid():
             form.save()

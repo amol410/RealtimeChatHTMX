@@ -34,4 +34,4 @@ def user_postsave(sender, instance, created, **kwargs):
 @receiver(pre_save, sender=User)
 def user_presave(sender, instance, **kwargs):
     if instance.username:
-        instance.username = instance.username.lower()
+        instance.username = instance.username.lower() 
