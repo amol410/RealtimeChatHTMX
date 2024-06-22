@@ -19,10 +19,10 @@ def profile_view(request, username=None):
 
 
 @login_required
-def profile_edit_view(request):
+def profile_edit_view(request): # get request - pre-populate data 
     form = ProfileForm(instance=request.user.profile)  
     
-    if request.method == 'POST':   
+    if request.method == 'POST': # post request  
         form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if form.is_valid():
             form.save()
